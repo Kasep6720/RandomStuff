@@ -7,9 +7,56 @@
         win.focus();
     }
 </script>
+<script>
+    let ShowMain = button => {
+        let Main = document.getElementById("Main");
+        let Page1 = document.getElementById("Page 1");
+        let hiddenmain = Main.getAttribute("hidden");
+        let hiddenpage1 = Page1.getAttribute("hidden");
 
+        if (hiddenmain) {
+            Main.removeAttribute("hidden");
+            Page1.setAttribute("hidden", "hidden");
+        } 
+        else {
+            Main.setAttribute("hidden", "hidden");
+        }
+    }
+</script>
+<script>
+    let ShowPage1 = button => {
+        let Main = document.getElementById("Main");
+        let Page1 = document.getElementById("Page 1");
+        let hiddenmain = Main.getAttribute("hidden");
+        let hiddenpage1 = Page1.getAttribute("hidden");
+
+        if (hiddenpage1) {
+            Page1.removeAttribute("hidden");
+            Main.setAttribute("hidden", "hidden");
+        } 
+        else {
+            Page1.setAttribute("hidden", "hidden");
+        }
+    }
+</script>
+<script>
+    let toggle = button => {
+        let element = document.getElementById("Mai1n");
+        let hidden = element.getAttribute("hidden");
+
+        if (hidden) {
+            element.removeAttribute("hidden");
+            button.innerText = "Hide Section";
+        } 
+        else {
+            element.setAttribute("hidden", "hidden");
+            button.innerText = "Show Section";
+        }
+    }
+</script>
 <head>
     <meta charset="UTF-8">
+	<meta name="color-scheme" content="light dark">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDK how you find this website but ok</title>
     <link rel="stylesheet" href="styles.css">
@@ -21,20 +68,38 @@
     </header>
     
     <main>
-        <section class="just-a-list">
+        <nav>
+            <ul>
+                <button onclick="ShowMain(this)">Home</button>
+                <button onclick="ShowPage1(this)">Page 1</button>
+            </ul>
+        </nav>
+
+        <section id="Main">
             <h2>Featured</h2>
             <div class="product">
-                <h3>[Anthology] EROGROS Vol. 2 [Digital] [アンソロジー] エログロス Vol.2 [DL版] #228922</h3>
+                <h3>[Anthology] EROGROS Vol. 2 [Digital] 
+                    [アンソロジー] エログロス Vol.2 [DL版] 
+                    #228922</h3>
                 <p>https://nhentai.net/g/228922/</p>
                 <button onclick=openInNewTab("https://nhentai.net/g/228922/")>Open link</button>
             </div>
             
             <div class="product">
-                <h3>[ShindoLA] METAMORPHOSIS (Complete) [English] #177013</h3>
+                <h3>[ShindoLA] METAMORPHOSIS (Complete) [English] 
+                    #177013</h3>
                 <p>https://nhentai.net/g/177013/</p>
                 <button onclick=openInNewTab("https://nhentai.net/g/177013/")>Open link</button>
             </div>
             
+            <div class="product">
+                <h3>[Memeya (Meme50)] AstolfoX (Fate/Grand Order) [Digital]
+                    [メメ屋 (メメ50)] AstolfoX (Fate/Grand Order) [DL版]
+                    #323147</h3>
+                <p>https://nhentai.net/g/323147/</p>
+                <button onclick=openInNewTab("https://nhentai.net/g/323147/")>Open link</button>
+            </div>
+
             <div class="product">
                 <h3>some random 6 digit numbers</h3>
                 <p>le link</p>
@@ -42,6 +107,43 @@
             </div>
 
         </section>
+
+        <section id="Page 1", hidden>
+            <h2>Featured</h2>
+            <div class="product">
+                <h3>[Himitsukessya Usagi (Dancyo)] Seiyoku Obake ni Norowarechatta!? | 被性慾妖怪給詛咒了！？ [Chinese] [雷米尔个人汉化] [Digital]
+                    [秘密結社うさぎ (だんちょ)] 性欲オバケに呪われちゃった!? [中国翻訳] [DL版]
+                    #491715</h3>
+                <p>https://nhentai.net/g/491715/</p>
+                <button onclick=openInNewTab("https://nhentai.net/g/491715/")>Open link</button>
+            </div>
+            
+            <div class="product">
+                <h3>(C97) [Kansai Orange (Arai Kei)] Ichigeki Haiboku | Defeated by One Punch! (One Punch Man) [English] [Dummie]
+                    (C97) [関西オレンジ (荒井啓)] 一・撃・敗・北 (ワンパンマン) [英訳]
+                    #298074</h3>
+                <p>https://nhentai.net/g/298074/</p>
+                <button onclick=openInNewTab("https://nhentai.net/g/298074/")>Open link</button>
+            </div>
+            
+            <div class="product">
+                <h3>[Maguro Coffee (Aburi Saamon Maru)] Incubus-ka Shita Ore ga JK Aite ni Gyakushuu Seikatsu!? 2 [Chinese] [醫學院好難讀CMUMT43個人翻譯]
+                    [まぐろ珈琲 (炙りサーモン丸)] インキュバス化した俺がJK相手に逆襲性活!? 2 [中国翻訳]
+                    #485314</h3>
+                <p>https://nhentai.net/g/485314/</p>
+                <button onclick=openInNewTab("https://nhentai.net/g/485314/")>Open link</button>
+            </div>
+
+            <div class="product">
+                <h3>[Mochi-ya (Karoti)] Mesugaki Rina-chan | 雌小鬼小里奈 [Chinese] [暴碧汉化组]
+                    [餅屋 (かろちー)] メスガキリナちゃん [中国翻訳]
+                    #451464</h3>
+                <p>https://nhentai.net/g/451464/</p>
+                <button onclick=openInNewTab("https://nhentai.net/g/451464/")>Open link</button>
+            </div>
+
+        </section>
+
     </main>
     
     <footer>
